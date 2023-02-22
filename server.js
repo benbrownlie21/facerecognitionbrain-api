@@ -27,17 +27,17 @@ app.use(cors())
 
 
 
-app.get('/', (req, res) => {
-    db.select('*').from('users')
-        .then(user => {
-        if (user.length) {
-            res.json(user)
-        } else {
-            res.status(400).json('Not Found')
-        }
-    })
-    .catch(err => res.status(400).json('Error getting users'))
-}) 
+app.get('/', (req, res) => { res.send('it is working!') })
+//     db.select('*').from('users')
+//         .then(user => {
+//         if (user.length) {
+//             res.json(user)
+//         } else {
+//             res.status(400).json('Not Found')
+//         }
+//     })
+//     .catch(err => res.status(400).json('Error getting users'))
+// }) 
 
 app.post('/signin', (req, res) => {
     const { email, password } = req.body;
@@ -107,6 +107,6 @@ app.put('/image', (req, res) => {
 
 
 
-app.listen(3001, ()=> {
-    console.log('App is running on port 3001')
+app.listen(process.env.PORT || 3001, ()=> {
+    console.log(`App is running on port ${process.env.PORT}`)
 })
