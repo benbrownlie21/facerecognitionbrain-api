@@ -7,11 +7,11 @@ import knex from "knex";
 const db = knex({
     client: 'pg',
     connection: {
-        host: '127.0.0.1',
-        user: 'postgres',
+        host: 'dpg-cfqps31gp3joa8g3gs9g-a',
+        user: 'smart_brain_f7nl_user',
         port: 5432,
-        password: 'Grange2020',
-        database: 'smart-brain'
+        password: 'Ki8rdQw1ftcYtrmxtdepI2Ea1OICy4UG',
+        database: 'smart_brain_f7nl'
     }
 });
 
